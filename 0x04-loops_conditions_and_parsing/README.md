@@ -2,11 +2,9 @@
 **0x04. Loops, conditions and parsing**
 
 ## Author's Details.
-Name: *Wendy Munyasi.*
+Joseph Njoroge
 
-Email: *wendymunyasi@gmail.com*
-
-Tel:*+254707240068.*
+Email: Joseph Njoroge 
 
 ##  Requirements
 
@@ -89,7 +87,3 @@ What are files and other comparison operators, and how to use them.
     sylvain@ubuntu$
     ```
 ---
-
-## Collaborate
-
-To collaborate, reach me through my email address wendymunyasi@gmail.com.
