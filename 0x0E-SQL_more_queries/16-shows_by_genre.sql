@@ -1,11 +1,7 @@
--- Lists all shows and genres linked to the show from the
--- database hbtn_0d_tvshows.
--- Records are ordered by ascending show title and genre name.
-SELECT t.`title`, g.`name`
-  FROM `tv_shows` AS t
-       LEFT JOIN `tv_show_genres` AS s
-       ON t.`id` = s.`show_id`
+-- script that lists all shows, and all genres linked to that show, from the database hbtn_0d_tvshows
 
-       LEFT JOIN `tv_genres` AS g
-       ON s.`genre_id` = g.`id`
- ORDER BY t.`title`, g.`name`;
+SELECT tv_shows.title, tv_genres.name
+FROM tv_shows
+LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
+LEFT JOIN tv_genres ON tv_genres.id = tv_show_genres.genre_id
+ORDER BY tv_shows.title ASC, tv_genres.name ASC;
