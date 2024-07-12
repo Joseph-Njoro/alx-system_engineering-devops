@@ -38,7 +38,7 @@ defaults
 frontend cryptotechcoder
     bind *:80
     bind *:443 ssl crt /etc/letsencrypt/live/www.cryptotechcoder.tech/cryptotechcoder.pem
-    http-request redirect scheme https unless { ssl_fc }
+    mode http
     default_backend app
 
 backend app
