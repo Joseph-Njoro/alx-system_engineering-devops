@@ -35,7 +35,7 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend cryptotechcoder
+frontend ramoz
     bind *:80
     bind *:443 ssl crt /etc/letsencrypt/live/www.ramoz.tech/ramoz.pem
     http-request redirect scheme https unless { ssl_fc }
