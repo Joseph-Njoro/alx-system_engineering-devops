@@ -1,1 +1,30 @@
-Lets see
+#!/bin/bash
+
+# Variables
+SERVICE_PATH="/etc/systemd/system/gunicorn.service"
+APP_DIR="/home/ubuntu/AirBnB_clone_v4/web_dynamic"
+GUNICORN_PATH="/home/ubuntu/.local/bin/gunicorn"
+SERVICE_CONTENT="[Unit]
+Description=Gunicorn instance to serve Airbnb Clone
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=$APP_DIR
+ExecStart=$GUNICORN_PATH --workers 3 --bind 0.0.0.0:5003 --access-logfile /tmp/airbnb-access.log --error-logfile /tmp/airbnb-error.log 2-hbnb:app
+
+[Install]
+WantedBy=multi-user.target
+"
+
+# Create service file
+echo "$SERVICE_CONTENT" | sudo tee $SERVICE_PATH
+
+# Reload systemd and start the service
+sudo systemctl daemon-reload
+sudo systemctl start gunicorn
+sudo systemctl enable gunicorn
+
+# Check status
+sudo systemctl status gunicorn
